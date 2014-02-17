@@ -1,0 +1,13 @@
+
+      html, body {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      } 
+      #map-canvas {
+        height: 90%;
+        width: 100%;
+      }
+      #lolo{
+          float: right;
+      }
