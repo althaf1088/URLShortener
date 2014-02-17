@@ -1,0 +1,71 @@
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script  >
+        	$(function() {
+ 
+    $('#lolo').click(function() {
+        url = 'http://localhost:3000/urls';
+        postData = {'url': $("#in1").val()};
+ 
+ 
+ 
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: JSON.stringify(postData),
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+            success: function(res) {
+                outputPageContent(res);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert("error= " + errorThrown);
+            }
+        });
+ 
+    });
+ 
+ 
+    $('#lolo2').click(function() {
+        url = $("#in1").val()+'/edit.json';
+        postData = {'su': $("#in1").val()};
+ 
+ 
+        $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+            success: function(res) {
+                showTable(res);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert("error= " + errorThrown);
+            }
+        });
+ 
+    });
+ 
+});
+ 
+ 
+ 
+function showTable(response) {
+ 
+    $("#output").html('<br/><br/><br/>url = '+response.shorturl+'<br/> hits = '+response.hits);
+}
+ 
+ 
+ 
+function outputPageContent(response) {
+    s = 'Shortened URL  :    <a href=' + response.shorturl + '>' + response.shorturl + '</a>';
+    $("#output").html(s);
+}
+        </script>
+        
+Hint : if you enter full url, click 'Get Short URL' , for statistics, enter the short url and click on 'Statistics' button
+        <div id="input">
+            url:<input type="text" id="in1" value=""/>
+            <input type="button" id="lolo" value="Get Shortened URL"/>  &nbsp;&nbsp;
+            <input type="button" id="lolo2" value="View Statistics"/> </div>
+        <div id="output"></div>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>URL Test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <!--        <script src="js/bootstrap.min.js"></script>
+                <script src="js/theme.js"></script>-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="js/URLTest.js" ></script>
+    </head>
+    <body>
+        <div id="input">
+            url:<input type="text" id="in1" value=""/>
+            <input type="button" id="lolo" value="Get Shortened URL"/>  <br/>
+            <input type="button" id="lolo2" value="View Statistics"/> </div>
+        <div id="output"></div>
+        <!--url:<input type="text" id="in1" value="haha"/>-->
+    </body>
+</html>
+
+
+
+<h1>Listing urls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>url</th>
+     
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @urls.each do |url| %>
+      <tr>
+        <td><%= url.url %></td>
+        
+        <td><%= link_to 'Show', url %></td>
+        <td><%= link_to 'View', edit_url_path(url) %></td>
+        <td><%= link_to 'Destroy', url, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Url', new_url_path %>
+
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+        <script>
+        	
+        	
+$(function() {
+    $('#lolo').click(function() {
+        $.getJSON('/urls.json', function(abc) {
+            outputPageContent(abc);
+	
+        });
+    });
+});
+
+function outputPageContent(response) {
+    s = '';
+    s=JSON.stringify(response);
+    alert('s='+JSON.stringify(response));
+    $("#output").html(s);
+
+}
+        </script>
+        <div>url:<input type="text" id="in1" value="haha"/></div>
+        <div><input type="button" id="lolo" value="haha"/></div>
+        <div id="output"></div>
+        
+

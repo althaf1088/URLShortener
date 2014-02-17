@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shorturl: MyString
+  hits: 1
+  ipaddress: MyString
+
+two:
+  shorturl: MyString
+  hits: 1
+  ipaddress: MyString
