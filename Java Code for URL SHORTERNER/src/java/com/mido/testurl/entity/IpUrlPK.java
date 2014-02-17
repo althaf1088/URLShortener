@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 
 /**
  *
- * @author mido
+ * @author ALT
  */
 @Embeddable
 public class IpUrlPK implements Serializable {

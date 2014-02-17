@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author mido
+ * @author ALT
  */
 @Entity
 @Table(name = "IP_URL")

@@ -25,7 +25,7 @@ import javax.ws.rs.Produces;
 
 /**
  *
- * @author mido
+ * @author ALT
  */
 @Stateless
 @Path("url")

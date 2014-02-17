@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author mido
+ * @author ALT
  */
 public class Forwarder extends HttpServlet {
 

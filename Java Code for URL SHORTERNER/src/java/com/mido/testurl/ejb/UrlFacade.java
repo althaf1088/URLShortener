@@ -13,7 +13,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author mido
+ * @author ALT
  */
 @Stateless
 public class UrlFacade extends AbstractFacade<Url> {
